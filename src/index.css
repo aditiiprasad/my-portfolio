@@ -1,0 +1,58 @@
+/* Load fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Shrikhand&display=swap");
+
+/* Import Tailwind */
+@import "tailwindcss";
+
+/* ================================
+   Theme (replaces tailwind.config.js)
+   ================================ */
+@theme {
+  /* Colors */
+  --color-custom-pink: #FF9FAC;
+  --color-custom-purple: #A78BFA;
+  --color-custom-blue: #60A5FA;
+  --color-custom-red: #F87171;
+  --color-custom-yellow: #FCD34D;
+  --color-custom-green: #4ADE80;
+
+  /* Fonts */
+  --font-shrikhand: "Shrikhand", cursive;
+  --font-sans: "Inter", sans-serif;
+
+  /* Shadows */
+  --shadow-neo: 6px 6px 0px 0px rgba(0,0,0,1);
+  --shadow-neo-sm: 4px 4px 0px 0px rgba(0,0,0,1);
+}
+
+/* ================================
+   Base styles (v4 way)
+   ================================ */
+body {
+  background-color: var(--color-custom-purple);
+  color: black;
+  font-family: var(--font-sans);
+  min-height: 100vh;
+}
+
+/* ================================
+   Custom Scrollbar
+   ================================ */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+  border-left: 2px solid black;
+}
+
+::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 9999px;
+  border: 2px solid white;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-custom-pink);
+}
