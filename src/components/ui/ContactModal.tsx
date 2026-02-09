@@ -16,7 +16,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
         
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-3xl font-shrikhand">Get in Touch 📬</h2>
-          <button onClick={onClose} className="text-2xl hover:rotate-90 transition-transform">
+          <button onClick={onClose} className="text-2xl hover:rotate-90 transition-transform cursor-pointer">
             <FaTimes />
           </button>
         </div>
@@ -38,7 +38,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
 
         <button 
           onClick={onClose}
-          className="mt-6 w-full bg-custom-red text-white font-bold py-3 border-2 border-black rounded-xl shadow-neo-sm hover:shadow-none hover:translate-y-1 transition-all"
+          className="mt-6 w-full bg-custom-red text-white font-bold py-3 border-2 border-black rounded-xl shadow-neo-sm hover:shadow-none hover:translate-y-1 transition-all cursor-pointer"
         >
           CLOSE
         </button>

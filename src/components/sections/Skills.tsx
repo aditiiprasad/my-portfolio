@@ -7,7 +7,7 @@ const SkillCategory = ({ title, skills, color }: { title: string, skills: string
     </h3>
     <div className="flex flex-wrap gap-2">
       {skills.map((skill) => (
-        <span key={skill} className="bg-gray-100 px-3 py-1 rounded-full border-2 border-black text-sm font-bold">
+        <span key={skill} className="bg-gray-100 px-3 py-1 rounded-full border-2 border-black text-sm font-bold hover:bg-custom-green">
           {skill}
         </span>
       ))}
@@ -17,9 +17,9 @@ const SkillCategory = ({ title, skills, color }: { title: string, skills: string
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-10 px-4 max-w-7xl mx-auto">
-      <div className="bg-black text-white px-8 py-3 rounded-full border-4 border-custom-purple w-fit mx-auto mb-10 shadow-neo transform rotate-1">
-        <h2 className="text-3xl font-shrikhand">SKILL ARSENAL 🛠️</h2>
+    <section id="skills" className="py-10 px-4 max-w-7xl mx-auto bg-custom-pink border-2 border-b-4 border-r-4 border-black rounded-3xl shadow-neo">
+      <div className="bg-black text-white px-8 py-3 rounded-full border-4 border-custom-red w-fit mx-auto mb-10 shadow-neo transform rotate-1">
+        <h2 className="text-3xl font-shrikhand">SKILLS 🛠️</h2>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

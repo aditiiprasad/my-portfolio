@@ -43,7 +43,7 @@ const Projects = () => {
       title: "LagFree",
       color: "bg-custom-blue",
       tools: ["Python", "Flask", "scikit-fuzzy", "React", "HLS.js"],
-      link: "#", 
+      link: "https://lagfree.vercel.app/", 
       description: [
         "Engineered a Mamdani Fuzzy Inference System (FIS) to process real-time network telemetry.",
         "Architected a 3-tier system (React, Node.js, Python) to visualize AI impact on QoE.",
@@ -66,7 +66,7 @@ const Projects = () => {
       title: "WhatsStat",
       color: "bg-custom-green",
       tools: ["Python", "Streamlit", "Pandas", "NLP", "Seaborn"],
-      link: "#", 
+      link: "https://whatsstat.streamlit.app/", 
       description: [
         "Data processing pipeline parsing 10,000+ messages from chat logs.",
         "Implemented NLP models achieving 90% accuracy in sentiment analysis.",
@@ -76,10 +76,10 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-10 px-4 max-w-7xl mx-auto">
+    <section id="projects" className="py-10 px-4 max-w-7xl mx-auto bg-custom-yellow border-4 border-black rounded-3xl shadow-neo">
       <div className="flex items-center gap-4 mb-10">
-        <div className="bg-custom-pink px-8 py-3 rounded-full border-4 border-black shadow-neo transform -rotate-1">
-            <h2 className="text-3xl font-shrikhand text-white">BUILDING STUFF 🏗️</h2>
+        <div className="bg-custom-green px-8 py-3 rounded-full border-4 border-black shadow-neo transform -rotate-1">
+            <h2 className="text-3xl font-shrikhand text-white">PROJECTS 🏗️</h2>
         </div>
       </div>
 

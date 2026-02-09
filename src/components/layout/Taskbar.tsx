@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import ContactModal from '../ui/ContactModal';
 
 const Taskbar = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  
   useEffect(() => {
     const timer = setInterval(() => setCurrentTime(new Date()), 60000);
     return () => clearInterval(timer);
   }, []);
 
-  
   const formatDate = (date: Date) => {
     const options: Intl.DateTimeFormatOptions = { 
       weekday: 'long', 
@@ -28,7 +28,6 @@ const Taskbar = () => {
     { name: 'SKILLS', id: 'skills' },
     { name: 'PROJECTS', id: 'projects' },
     { name: 'EXTRA-CURRICULARS', id: 'extra' },
-    { name: 'ACHIEVEMENTS', id: 'achievements' },
   ];
 
   const scrollToSection = (id: string) => {
@@ -40,65 +39,78 @@ const Taskbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-custom-purple border-b-4 border-black px-4 py-3 shadow-neo">
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
+    <>
+      <nav className="fixed top-4 left-4 right-4 z-50 bg-custom-purple border-4 border-black rounded-full px-4 py-3 shadow-neo flex justify-between items-center max-w-7xl mx-auto">
         
-       
-        <div className="text-xl md:text-2xl font-shrikhand text-white drop-shadow-[2px_2px_0_rgba(0,0,0,1)]">
-          [PORTFOLIO👧🏻]
+        <div className="text-xl md:text-2xl font-shrikhand text-white drop-shadow-[2px_2px_0_rgba(0,0,0,1)] ml-2">
+          PORTFOLIO
         </div>
 
-        
-        <div className="hidden lg:flex gap-6 font-bold text-sm bg-white px-6 py-2 rounded-full border-2 border-black shadow-neo-sm">
+        <div className="hidden lg:flex gap-3 font-bold text-sm items-center">
           {navLinks.map((link) => (
             <button
               key={link.name}
               onClick={() => scrollToSection(link.id)}
-              className="hover:text-custom-pink hover:underline decoration-4 underline-offset-4 transition-all"
+              className="px-4 py-2 bg-white text-black rounded-full border-black border-b-4 border-r-4 border-2 
+                         hover:bg-white hover:text-black hover:border-black hover:border-b-2 hover:border-r-2 
+                         active:border-b-2 active:border-r-2 active:translate-y-1 transition-all cursor-pointer"
             >
               {link.name}
             </button>
           ))}
-          <button onClick={() => scrollToSection('contact')} className="hover:text-custom-pink hover:underline decoration-4 underline-offset-4 transition-all">
+          <button 
+            onClick={() => setIsModalOpen(true)} 
+            className="px-5 py-2 bg-custom-pink text-black border-2 border-black border-b-8 border-r-8 rounded-full 
+                       hover:border-b-4 hover:border-r-4 active:translate-y-1 transition-all cursor-pointer"
+          >
             CONTACT
           </button>
         </div>
 
-       
-        <div className="hidden md:flex items-center gap-2 bg-black text-custom-yellow px-4 py-1 rounded-md font-mono text-sm border-2 border-white shadow-[2px_2px_0px_0px_rgba(255,255,255,1)]">
+        <div className="hidden md:flex items-center gap-2 bg-custom-yellow text-black px-4 py-1 rounded-full font-mono text-sm border-black border-2 border-b-4 border-r-4">
           <span>█</span>
           <span>{formatDate(currentTime)}</span>
         </div>
 
-        
         <button 
-          className="lg:hidden text-white text-2xl"
+          className="lg:hidden text-white text-2xl bg-black p-2 rounded-full border-2 border-white"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <FaTimes /> : <FaBars />}
         </button>
-      </div>
+      </nav>
 
-      
       {isMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 right-0 bg-custom-purple border-b-4 border-black p-4 flex flex-col gap-4 shadow-neo">
+        <div className="fixed top-24 left-4 right-4 z-40 bg-custom-purple border-4 border-black rounded-3xl p-4 flex flex-col gap-3 shadow-neo animate-bounce-in lg:hidden max-w-7xl mx-auto">
           {navLinks.map((link) => (
             <button
               key={link.name}
               onClick={() => scrollToSection(link.id)}
-              className="bg-white border-2 border-black p-2 font-bold shadow-neo-sm text-left"
+              className="bg-white border-2 border-black border-b-4 border-r-4 p-3 rounded-xl font-bold active:border-b-2 active:border-r-2 active:translate-y-1 text-left hover:bg-gray-100 transition-all"
             >
               {link.name}
             </button>
           ))}
+          <button
+              onClick={() => {
+                setIsMenuOpen(false);
+                setIsModalOpen(true);
+              }}
+              className="bg-custom-pink border-2 border-black border-b-4 border-r-4 p-3 rounded-xl font-bold active:border-b-2 active:border-r-2 active:translate-y-1 text-left transition-all"
+            >
+              CONTACT
+          </button>
            
-           <div className="flex md:hidden items-center gap-2 bg-black text-custom-yellow px-4 py-2 rounded-md font-mono text-sm border-2 border-white">
+           <div className="flex md:hidden items-center gap-2 bg-custom-yellow text-black px-4 py-3 rounded-xl font-mono text-sm border-black border-2 border-b-4 border-r-4 justify-center">
             <span>█</span>
             <span>{formatDate(currentTime)}</span>
           </div>
         </div>
       )}
-    </nav>
+
+      
+      <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+    </>
   );
 };
 
