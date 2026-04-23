@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaGithub, FaLinkedin, FaCode, FaDownload, FaEnvelope } from 'react-icons/fa';
 import ContactModal from '../ui/ContactModal';
+import MiniTerminal from '../ui/MiniTerminal';
 
 const Hero = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -79,10 +80,12 @@ const Hero = () => {
             <p className="text-lg font-medium leading-relaxed mb-4">
                I have strong aptitude, technical, and communication skills, and a logical approach to problem-solving. My diverse schooling across India has made me adaptable and eager to create.
             </p>
-            <div className="bg-white p-4 border-2 border-black rounded-xl inline-block font-bold shadow-neo-sm rotate-1">
+            <div className="bg-white p-4 border-2 border-black rounded-xl inline-block font-bold shadow-neo-sm ">
                 🚀 Open to Software and Research Internships
             </div>
          </div>
+
+          <MiniTerminal/>
       </div>
 
       <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />

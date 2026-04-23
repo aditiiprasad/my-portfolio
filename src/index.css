@@ -69,3 +69,16 @@ body {
 .animate-marquee {
   animation: marquee 20s linear infinite;
 }
+
+
+/* Custom Scrollbar for the Terminal */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #000;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #22d3ee; /* Tailwind cyan-400 */
+  border-radius: 4px;
+}

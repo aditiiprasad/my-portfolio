@@ -9,6 +9,8 @@ import Footer from './components/layout/Footer';
 import CustomCursor from './components/ui/CustomCursor';
 import Marquee from './components/ui/Marquee';
 import Preloader from './components/ui/Preloader';
+import Blogs from './components/sections/Blogs';
+import MiniTerminal from './components/ui/MiniTerminal';
 
 function App() {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -50,12 +52,16 @@ function App() {
         
         
         <Projects />
+
+        <Blogs/>
         
         
         <Education />
         
         
         <Extras />
+
+       
 
         <Marquee/>
         
