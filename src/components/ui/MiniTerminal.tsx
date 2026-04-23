@@ -1,26 +1,34 @@
 import React, { useState } from 'react';
 
+// Tell TypeScript what our history array looks like
+type HistoryItem = {
+  type: string;
+  text: string;
+};
+
 const MiniTerminal = () => {
   const [input, setInput] = useState('');
-  const [history, setHistory] = useState([
+  const [history, setHistory] = useState<HistoryItem[]>([
     { type: 'output', text: 'AditiOS v1.0.0 (tty1)' },
     { type: 'output', text: 'Type "help" to see available commands.' }
   ]);
 
+  // FIX 1: Explicitly state this can be a number OR null
+  const [secretNumber, setSecretNumber] = useState<number | null>(null);
 
-  const [secretNumber, setSecretNumber] = useState(null);
-
-  const addLine = (text, type = 'output') => {
+  // FIX 2: Define types for the parameters
+  const addLine = (text: string, type: string = 'output') => {
     setHistory((prev) => [...prev, { type, text }]);
   };
 
-  const handleCommand = (e) => {
+  // FIX 3: Define the event type
+  const handleCommand = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       const cmd = input.trim().toLowerCase();
       addLine(`guest@aditi:~$ ${input}`, 'input');
 
-      
-      if (secretNumber !== null && !isNaN(cmd)) {
+      // FIX 4: Wrap cmd in Number() for strict TypeScript compatibility
+      if (secretNumber !== null && cmd !== '' && !isNaN(Number(cmd))) {
         const guess = Number(cmd);
         if (guess === secretNumber) {
           addLine('🎉 Correct! You guessed the number.');
@@ -70,8 +78,6 @@ const MiniTerminal = () => {
           break;
 
         case 'rps': {
-          const options = ['rock', 'paper', 'scissors'];
-          const bot = options[Math.floor(Math.random() * 3)];
           addLine('Type rock, paper, or scissors');
           setSecretNumber(null);
           break;
@@ -118,7 +124,6 @@ const MiniTerminal = () => {
 
   return (
     <div className="w-full max-w-2xl mx-auto bg-black border-4 border-black rounded-2xl shadow-neo overflow-hidden flex flex-col font-mono text-sm sm:text-base">
-     
       <div className="bg-gray-200 border-b-4 border-black px-4 py-2 flex items-center justify-between">
         <div className="flex gap-2">
           <div className="w-3 h-3 rounded-full bg-custom-red border-2 border-black"></div>
@@ -129,7 +134,6 @@ const MiniTerminal = () => {
         <div className="w-10"></div>
       </div>
 
-     
       <div className="p-4 h-64 overflow-y-auto bg-black text-custom-blue custom-scrollbar">
         {history.map((line, index) => (
           <div
