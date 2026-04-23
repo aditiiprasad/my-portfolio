@@ -3,7 +3,7 @@ import { FaTrophy, FaHandHoldingHeart, FaBullhorn } from 'react-icons/fa';
 
 const Extras = () => {
   return (
-    <section className="py-20 px-4 max-w-7xl mx-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start bg-custom-red border-4 border-black rounded-3xl shadow-neo">
+    <section className="py-20 px-4 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start bg-custom-red border-4 border-black rounded-3xl shadow-neo">
         
         
         <div id="extra" className="flex flex-col gap-8 relative z-10">

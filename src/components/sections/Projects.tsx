@@ -110,7 +110,7 @@ const Projects = () => {
     ];
 
   return (
-    <section id="projects" className="py-10 px-4 mx-8 max-w-7xl  bg-custom-yellow border-4 border-black rounded-3xl shadow-neo">
+    <section id="projects" className="py-10 px-4 mx-auto max-w-7xl  bg-custom-yellow border-4 border-black rounded-3xl shadow-neo">
       <div className="flex items-center gap-4 mb-10">
         <div className="bg-custom-green px-8 py-3 rounded-full border-4 border-black shadow-neo transform -rotate-1">
             <h2 className="text-3xl font-shrikhand text-white">PROJECTS 🏗️</h2>

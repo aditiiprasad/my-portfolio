@@ -17,7 +17,7 @@ const SkillCategory = ({ title, skills, color }: { title: string, skills: string
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-10 px-4 max-w-7xl mx-8 bg-custom-pink border-2 border-b-4 border-r-4 border-black rounded-3xl shadow-neo">
+    <section id="skills" className="py-10 px-4 max-w-7xl mx-auto bg-custom-pink border-2 border-b-4 border-r-4 border-black rounded-3xl shadow-neo">
       <div className="bg-custom-yellow text-black px-8 py-3 rounded-full border-4 border-black w-fit mx-auto mb-10 shadow-neo ">
         <h2 className="text-3xl font-shrikhand">SKILLS 🛠️</h2>
       </div>

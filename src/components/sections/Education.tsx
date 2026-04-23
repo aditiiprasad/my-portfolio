@@ -241,7 +241,7 @@ const Education = () => {
   ];
 
   return (
-    <section id="education" className="py-10 px-4 max-w-7xl mx-8 bg-custom-green border-4 border-black rounded-3xl shadow-neo">
+    <section id="education" className="py-10 px-4 max-w-7xl mx-auto bg-custom-green border-4 border-black rounded-3xl shadow-neo">
         
         <div className="flex justify-center mb-10">
             <div className="bg-white px-8 py-3 rounded-full border-4 border-black w-fit shadow-neo ">
