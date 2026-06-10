@@ -13,21 +13,24 @@ const Taskbar = () => {
   }, []);
 
   const formatDate = (date: Date) => {
-    const options: Intl.DateTimeFormatOptions = { 
-      weekday: 'long', 
-      month: 'numeric', 
-      day: 'numeric', 
-      year: 'numeric' 
+    const options: Intl.DateTimeFormatOptions = {
+      weekday: 'long',
+      month: 'numeric',
+      day: 'numeric',
+      year: 'numeric'
     };
     return date.toLocaleDateString('en-US', options);
   };
 
   const navLinks = [
-    { name: 'ABOUT', id: 'about' },
-    { name: 'EDUCATION', id: 'education' },
-    { name: 'SKILLS', id: 'skills' },
+
+    { name: 'EXPERIENCE', id: 'experience' },
     { name: 'PROJECTS', id: 'projects' },
-    { name: 'EXTRA-CURRICULARS', id: 'extra' },
+    { name: 'SKILLS', id: 'skills' },
+    { name: 'BLOGS', id: 'blogs' },
+    { name: 'EDUCATION', id: 'education' },
+
+
   ];
 
   const scrollToSection = (id: string) => {
@@ -41,7 +44,7 @@ const Taskbar = () => {
   return (
     <>
       <nav className="fixed top-4 left-4 right-4 z-50 bg-custom-purple border-4 border-black rounded-full px-4 py-3 shadow-neo flex justify-between items-center max-w-7xl mx-auto">
-        
+
         <div className="text-xl md:text-2xl font-shrikhand text-white drop-shadow-[2px_2px_0_rgba(0,0,0,1)] ml-2">
           PORTFOLIO
         </div>
@@ -58,8 +61,8 @@ const Taskbar = () => {
               {link.name}
             </button>
           ))}
-          <button 
-            onClick={() => setIsModalOpen(true)} 
+          <button
+            onClick={() => setIsModalOpen(true)}
             className="px-5 py-2 bg-custom-pink text-black border-2 border-black border-b-8 border-r-8 rounded-full 
                        hover:border-b-4 hover:border-r-4 active:translate-y-1 transition-all cursor-pointer"
           >
@@ -72,7 +75,7 @@ const Taskbar = () => {
           <span>{formatDate(currentTime)}</span>
         </div>
 
-        <button 
+        <button
           className="lg:hidden text-white text-2xl bg-black p-2 rounded-full border-2 border-white"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
@@ -92,23 +95,23 @@ const Taskbar = () => {
             </button>
           ))}
           <button
-              onClick={() => {
-                setIsMenuOpen(false);
-                setIsModalOpen(true);
-              }}
-              className="bg-custom-pink border-2 border-black border-b-4 border-r-4 p-3 rounded-xl font-bold active:border-b-2 active:border-r-2 active:translate-y-1 text-left transition-all"
-            >
-              CONTACT
+            onClick={() => {
+              setIsMenuOpen(false);
+              setIsModalOpen(true);
+            }}
+            className="bg-custom-pink border-2 border-black border-b-4 border-r-4 p-3 rounded-xl font-bold active:border-b-2 active:border-r-2 active:translate-y-1 text-left transition-all"
+          >
+            CONTACT
           </button>
-           
-           <div className="flex md:hidden items-center gap-2 bg-custom-yellow text-black px-4 py-3 rounded-xl font-mono text-sm border-black border-2 border-b-4 border-r-4 justify-center">
+
+          <div className="flex md:hidden items-center gap-2 bg-custom-yellow text-black px-4 py-3 rounded-xl font-mono text-sm border-black border-2 border-b-4 border-r-4 justify-center">
             <span>█</span>
             <span>{formatDate(currentTime)}</span>
           </div>
         </div>
       )}
 
-      
+
       <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   );

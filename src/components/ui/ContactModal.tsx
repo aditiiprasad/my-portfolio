@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope, FaCode, FaTimes } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaCode, FaTimes, FaMedium, FaTwitter } from 'react-icons/fa';
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -33,6 +33,12 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
             </a>
             <a href="https://leetcode.com/u/aditiiprasad/" target="_blank" rel="noreferrer" className="flex items-center gap-3 p-3 bg-orange-200 border-2 border-black rounded-xl hover:translate-x-1 hover:shadow-neo-sm transition-all">
                 <FaCode className="text-xl"/> LeetCode
+            </a>
+            <a href="https://twitter.com/aditiiprasad" target="_blank" rel="noreferrer" className="flex items-center gap-3 p-3 bg-black text-white border-2 border-black rounded-xl hover:translate-x-1 hover:shadow-neo-sm transition-all">
+                <FaTwitter className="text-xl"/> X (Twitter)
+            </a>
+            <a href="https://medium.com/@aditiiprasad" target="_blank" rel="noreferrer" className="flex items-center gap-3 p-3 bg-white text-black border-2 border-black rounded-xl hover:translate-x-1 hover:shadow-neo-sm transition-all">
+                <FaMedium className="text-xl"/> Medium
             </a>
         </div>
 

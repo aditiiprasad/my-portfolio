@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-// Tell TypeScript what our history array looks like
+
 type HistoryItem = {
   type: string;
   text: string;
@@ -13,21 +13,21 @@ const MiniTerminal = () => {
     { type: 'output', text: 'Type "help" to see available commands.' }
   ]);
 
-  // FIX 1: Explicitly state this can be a number OR null
+
   const [secretNumber, setSecretNumber] = useState<number | null>(null);
 
-  // FIX 2: Define types for the parameters
+
   const addLine = (text: string, type: string = 'output') => {
     setHistory((prev) => [...prev, { type, text }]);
   };
 
-  // FIX 3: Define the event type
+
   const handleCommand = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       const cmd = input.trim().toLowerCase();
       addLine(`guest@aditi:~$ ${input}`, 'input');
 
-      // FIX 4: Wrap cmd in Number() for strict TypeScript compatibility
+
       if (secretNumber !== null && cmd !== '' && !isNaN(Number(cmd))) {
         const guess = Number(cmd);
         if (guess === secretNumber) {

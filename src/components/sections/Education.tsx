@@ -32,7 +32,7 @@ const EduCard = ({ year, title, place, details, color }: EduProps) => (
 const Blackboard = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [isDrawing, setIsDrawing] = useState(false);
-  const [color, setColor] = useState('#ffffff'); // Default White Chalk
+  const [color, setColor] = useState('#ffffff');
   const [brushSize, setBrushSize] = useState(4);
 
   
@@ -241,11 +241,11 @@ const Education = () => {
   ];
 
   return (
-    <section id="education" className="py-10 px-4 max-w-7xl mx-auto bg-custom-green border-4 border-black rounded-3xl shadow-neo">
+    <section id="education" className="py-10 px-4 max-w-7xl mx-auto bg-custom-green border-2 border-b-4 border-r-4 border-black rounded-3xl shadow-neo">
         
         <div className="flex justify-center mb-10">
             <div className="bg-white px-8 py-3 rounded-full border-4 border-black w-fit shadow-neo ">
-                <h2 className="text-3xl font-shrikhand">EDUCATION 🎨</h2>
+                <h2 className="text-3xl font-shrikhand">EDUCATION</h2>
             </div>
         </div>
 
