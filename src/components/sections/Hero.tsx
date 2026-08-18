@@ -79,13 +79,13 @@ const Hero = () => {
         <div className="bg-custom-yellow p-6 md:p-10 rounded-3xl border-2 border-b-4 border-r-4 border-black shadow-neo">
           <h2 className="text-4xl font-shrikhand mb-6">Hi people!</h2>
           <p className="text-lg font-medium leading-relaxed mb-4">
-            I am a <span className="font-bold bg-white px-1 border border-black">4th-year (final) student at BIT Mesra</span>, pursuing a Bachelor of Technology in Computer Science and Engineering. I define myself as a <span className="font-bold bg-white px-1 border border-black">Woman in STEM</span> aspiring to build scalable software.
+            I'm a <span className="font-bold bg-white px-1 border border-black">final-year CSE student at BIT Mesra</span> and an SDE Intern at <span className="font-bold bg-white px-1 border border-black">Purplle</span>. Previously, I worked on applied AI and computer vision pipelines at <span className="font-bold bg-white px-1 border border-black">DRDO (CAIR)</span>.
           </p>
           <p className="text-lg font-medium leading-relaxed mb-4">
-            I have strong aptitude, technical, and communication skills, and a logical approach to problem-solving. My diverse schooling across India has made me adaptable and eager to create.
+            I'm always excited to connect with folks building scalable products or conducting impactful AI research!
           </p>
           <div className="bg-white p-4 border-2 border-black rounded-xl inline-block font-bold shadow-neo-sm ">
-            🚀 Open to Software and Research Internships
+            🚀 Open to Software Engineering and Research opportunities
           </div>
         </div>
 
