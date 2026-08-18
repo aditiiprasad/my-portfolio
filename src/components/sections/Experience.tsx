@@ -35,7 +35,7 @@ const Experience = () => {
 
       {/* Section Header */}
       <div className="flex items-center gap-4 mb-10">
-        <div className="bg-[#FEF9C3] px-8 py-3 rounded-full border-4 border-black shadow-neo">
+        <div className="bg-custom-yellow px-8 py-3 rounded-full border-4 border-black shadow-neo">
           <h2 className="text-3xl font-shrikhand italic uppercase tracking-wide">EXPERIENCE</h2>
         </div>
       </div>
