@@ -26,33 +26,34 @@ const Skills = () => {
         <SkillCategory 
             title="Languages" 
             color="bg-custom-pink"
-            skills={['Java', 'Python', 'JavaScript', 'C']} 
+            skills={['Java', 'Python', 'JavaScript', 'TypeScript', 'C', 'GoLang']} 
         />
         <SkillCategory 
             title="Frontend" 
             color="bg-custom-blue"
-            skills={['React.js', 'HTML5', 'CSS3', 'Tailwind CSS', 'Vite', 'Responsive Design']} 
+            skills={['React.js', 'HTML/CSS', 'Tailwind CSS']} 
         />
         <SkillCategory 
             title="Backend" 
             color="bg-custom-green"
-            skills={['Node.js', 'Express.js', 'REST APIs', 'JWT Auth']} 
+            skills={['Node.js', 'Express.js', 'FastAPI', 'Flask', 'REST APIs', 'WebSockets', 'JWT Authentication', 'Microservices']} 
         />
         <SkillCategory 
             title="Databases" 
             color="bg-custom-yellow"
-            skills={['MongoDB', 'SQL']} 
+            skills={['MongoDB', 'PostgreSQL', 'MySQL']} 
         />
         <SkillCategory 
-            title="Core CS" 
-            color="bg-custom-red"
-            skills={['DSA', 'OOP', 'OS', 'Computer Networks', 'Distributed Systems']} 
-        />
-        <SkillCategory 
-            title="Tools & Cloud" 
+            title="AI/ML" 
             color="bg-purple-300"
-            skills={['Git', 'GitHub', 'GCP', 'AWS', 'Postman']} 
+            skills={['Agentic AI Systems', 'Generative AI (LLMs)', 'Prompt Engineering', 'PyTorch', 'Hugging Face', 'scikit-fuzzy', 'NLP', 'Data Processing']} 
         />
+        <SkillCategory 
+            title="Developer Tools" 
+            color="bg-custom-red"
+            skills={['Git', 'GitHub', 'Docker', 'Postman', 'Linux', 'Vite', 'Google Cloud Platform (GCP)', 'AWS']} 
+        />
+
       </div>
     </section>
   );

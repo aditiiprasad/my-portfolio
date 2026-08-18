@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope, FaCode, FaTimes, FaMedium, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaCode, FaTimes, FaMedium, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -39,6 +39,9 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
             </a>
             <a href="https://medium.com/@aditiiprasad" target="_blank" rel="noreferrer" className="flex items-center gap-3 p-3 bg-white text-black border-2 border-black rounded-xl hover:translate-x-1 hover:shadow-neo-sm transition-all">
                 <FaMedium className="text-xl"/> Medium
+            </a>
+            <a href="https://instagram.com/aditiiprasad" target="_blank" rel="noreferrer" className="flex items-center gap-3 p-3 bg-pink-200 text-black border-2 border-black rounded-xl hover:translate-x-1 hover:shadow-neo-sm transition-all">
+                <FaInstagram className="text-xl"/> Instagram
             </a>
         </div>
 

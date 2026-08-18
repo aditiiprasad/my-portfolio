@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaGithub, FaLinkedin, FaCode, FaDownload, FaEnvelope, FaExclamationTriangle, FaTwitter, FaMedium } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaCode, FaDownload, FaEnvelope, FaExclamationTriangle, FaTwitter, FaMedium, FaInstagram } from 'react-icons/fa';
 import ContactModal from '../ui/ContactModal';
 import MiniTerminal from '../ui/MiniTerminal';
 
@@ -69,6 +69,7 @@ const Hero = () => {
           <a href="https://leetcode.com/u/aditiiprasad/" target="_blank" className="hover:scale-110 transition-transform text-orange-600"><FaCode /></a>
           <a href="https://twitter.com/aditiiprasad" target="_blank" className="hover:scale-110 transition-transform text-black"><FaTwitter /></a>
           <a href="https://medium.com/@aditiiprasad" target="_blank" className="hover:scale-110 transition-transform text-black"><FaMedium /></a>
+          <a href="https://instagram.com/aditiiprasad" target="_blank" className="hover:scale-110 transition-transform text-pink-600"><FaInstagram /></a>
         </div>
       </div>
 

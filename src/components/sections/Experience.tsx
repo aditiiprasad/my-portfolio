@@ -1,6 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { FaPlane, FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa';
 
 interface ExperienceProps {
   role: string;
@@ -11,91 +10,133 @@ interface ExperienceProps {
   color: string;
 }
 
-const ExperienceCard = ({ role, company, duration, location, description, color }: ExperienceProps) => (
-  <div className={`relative bg-white border-4 border-black p-6 md:p-8 pt-28 md:pt-8 rounded-3xl border-b-8 border-r-8 hover:-translate-y-2 hover:border-b-4 hover:border-r-4 transition-all z-10 mx-auto w-full max-w-4xl shadow-neo mt-12 md:mt-6`}>
-
-
-    <div className="absolute -top-8 md:-top-6 left-4 right-4 md:left-auto md:right-8 flex flex-col gap-2 font-mono font-bold text-xs md:text-sm bg-custom-yellow px-4 py-3 rounded-xl border-4 border-black shadow-[4px_4px_0_rgba(0,0,0,1)] z-20 transform hover:rotate-0 transition-transform">
-      <div className="flex items-center gap-2">
-        <FaCalendarAlt className="text-black" /> {duration}
-      </div>
-      <div className="flex items-center gap-2">
-        <FaMapMarkerAlt className="text-black" /> {location}
-      </div>
-    </div>
-
-    <div className="mt-2 flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
-      <div>
-        <h3 className="text-3xl md:text-4xl font-shrikhand leading-tight mb-2 uppercase tracking-wide">{role}</h3>
-        <div className="flex items-center gap-2 text-lg font-bold">
-          <span className={`px-3 py-1 border-2 border-black rounded-md ${color} shadow-neo-sm`}>
-            {company}
-          </span>
-        </div>
-      </div>
-    </div>
-
-    <div className="text-base font-medium bg-gray-50 p-4 rounded-xl border-2 border-black leading-relaxed shadow-inner mt-6">
-      <div className="flex gap-2 mb-3 border-b-2 border-black pb-3">
-        <div className="w-3 h-3 rounded-full bg-custom-red border-2 border-black"></div>
-        <div className="w-3 h-3 rounded-full bg-custom-yellow border-2 border-black"></div>
-        <div className="w-3 h-3 rounded-full bg-custom-green border-2 border-black"></div>
-      </div>
-      {description}
-    </div>
-  </div>
-);
-
 const Experience = () => {
   const experiences = [
     {
-      role: "Intern",
+      role: "Software Engineer Intern",
+      company: "Purplle.com",
+      duration: "Jul 2026 - Present",
+      location: "Mumbai, Maharashtra, India",
+      description: "Part of the team building Purplle's Point of Sale (POS) platform. Developing scalable backend services and APIs for retail operations.",
+      color: "bg-custom-pink"
+    },
+    {
+      role: "Research Intern",
       company: "DRDO, Ministry of Defence, Govt. of India",
-      duration: "Jun 2026 - Present",
-      location: "Bengaluru, Karnataka, India · On-site",
-      description: "Centre for Artificial Intelligence and Robotics , Defence Research & Development Organisation (DRDO) .",
+      duration: "Jun 2026 - Jul 2026",
+      location: "Bengaluru, Karnataka, India",
+      description: "Spent the summer at DRDO's Centre for Artificial Intelligence and Robotics (CAIR) working on computer vision pipelines for autonomous train perception. Contributed to transforming large-scale data sets such as OSDAR and GERALD to YOLO format, created validation and data quality tools, prevented data leakage between sequential data and trained YOLO object detectors. Gained exposure to machine learning, computer vision, data science, and working in an air-gapped secure research environment.",
       color: "bg-custom-purple"
     }
   ];
 
   return (
-    <div className="relative w-full py-10">
+    <section id="experience" className="py-10 px-4 max-w-7xl mx-auto w-full relative">
 
-      <div className="absolute top-1/2 left-0 w-full h-0 z-50 pointer-events-none flex items-center">
-        <motion.div
-          initial={{ x: "-50vw" }}
-          animate={{ x: "150vw" }}
-          transition={{
-            duration: 8.5,
-            repeat: Infinity,
-            ease: "linear",
-            repeatDelay: 2
-          }}
-          className="flex items-center absolute -translate-y-1/2"
-        >
-
-          <div className="w-[80vw] h-6 bg-white opacity-60 blur-xl rounded-full mr-[-20px]"></div>
-          <div className="w-[60vw] h-3 bg-white opacity-80 blur-md rounded-full mr-[-40px] absolute right-[60px]"></div>
-
-
-          <FaPlane className="text-gray-800 text-6xl  drop-shadow-neo z-10" />
-        </motion.div>
+      {/* Section Header */}
+      <div className="flex items-center gap-4 mb-10">
+        <div className="bg-[#FEF9C3] px-8 py-3 rounded-full border-4 border-black shadow-neo">
+          <h2 className="text-3xl font-shrikhand italic uppercase tracking-wide">EXPERIENCE</h2>
+        </div>
       </div>
 
-      <section id="experience" className="px-4 max-w-7xl mx-auto bg-custom-purple border-2 border-b-4 border-r-4 border-black rounded-3xl shadow-neo relative z-10 py-10">
-        <div className="flex justify-center mb-10 relative z-10">
-          <div className="bg-white px-8 py-3 rounded-full border-4 border-black w-fit shadow-neo">
-            <h2 className="text-3xl font-shrikhand tracking-wide">EXPERIENCE</h2>
-          </div>
-        </div>
+      <div className="relative max-w-6xl mx-auto z-10 pb-8">
 
-        <div className="flex flex-col gap-12 items-center relative z-10 px-4 md:px-8">
+
+
+        <div className="flex flex-col gap-12 lg:gap-20">
           {experiences.map((exp, index) => (
-            <ExperienceCard key={index} {...exp} />
+            <div key={index} className="flex flex-col lg:flex-row gap-6 lg:gap-16 items-start relative group">
+
+              {/* Date & Location (Left Side) */}
+              <div className="w-full lg:w-[260px] flex-shrink-0 flex flex-col items-start gap-4 z-10">
+                {/* Date Capsule */}
+                <div className="inline-flex items-center gap-3 bg-gray-100 px-5 py-2 border-4 border-black rounded-full shadow-[4px_4px_0_rgba(0,0,0,1)] font-bold text-sm md:text-base">
+                  <FaCalendarAlt className="text-black" />
+                  <span>{exp.duration}</span>
+                </div>
+
+                {/* Location (Text only) */}
+                <div className="flex items-center gap-2 font-bold text-sm md:text-base text-gray-800 ml-2">
+                  <FaMapMarkerAlt className="text-black text-lg flex-shrink-0" />
+                  <span>{exp.location}</span>
+                </div>
+              </div>
+
+              {/* Connecting Horizontal Line Element for Desktop */}
+              <div className="hidden lg:block absolute top-6 left-[260px] w-16 h-1 bg-black z-0 border-t-4 border-black group-hover:bg-custom-yellow transition-colors"></div>
+
+              {/* Dotted wavy line to next date */}
+              {index !== experiences.length - 1 && (
+                <div className="hidden lg:block absolute top-[40px] -bottom-[80px] left-[260px] w-16 -z-10 pointer-events-none">
+                  <svg
+                    className="w-full h-full"
+                    preserveAspectRatio="none"
+                    viewBox="0 0 100 100"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M 50 0 C 120 25, -20 75, 50 100"
+                      stroke="black"
+                      strokeWidth="5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeDasharray="2 12"
+                      vectorEffect="non-scaling-stroke"
+                    />
+                  </svg>
+                </div>
+              )}
+
+              {/* Main Experience Card (Right Side) */}
+              <div className="w-full flex-grow border-4 border-black shadow-neo hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all flex flex-col h-full relative bg-white">
+
+                {/* Top Bar (like BlogCard) */}
+                <div className={`border-b-4 border-black px-3 py-2 flex justify-between items-center ${exp.color}`}>
+                  <div className="flex gap-2">
+                    <div className="w-3 h-3 rounded-full bg-white border-2 border-black"></div>
+                    <div className="w-3 h-3 rounded-full bg-white border-2 border-black"></div>
+                    <div className="w-3 h-3 rounded-full bg-white border-2 border-black"></div>
+                  </div>
+                  <span className="font-mono text-[10px] font-black uppercase tracking-widest text-black">
+                    experience.exe
+                  </span>
+                </div>
+
+                {/* Content Box */}
+                <div className="p-6 md:p-8 flex flex-col flex-grow">
+                  {/* Role */}
+                  <h3 className="text-2xl md:text-3xl italic leading-tight mb-5 tracking-wide text-black font-shrikhand">
+                    {exp.role}
+                  </h3>
+
+                  {/* Company Name Pill */}
+                  <div className={`inline-block ${exp.color} px-5 py-2 border-4 border-black rounded-full font-bold text-lg md:text-xl shadow-[4px_4px_0_rgba(0,0,0,1)] mb-8 tracking-wide w-fit`}>
+                    {exp.company}
+                  </div>
+
+                  {/* Description Box */}
+                  <div className="bg-gray-50 border-4 border-black rounded-xl p-5 md:p-6 shadow-sm relative overflow-hidden">
+                    {/* Inner Dots */}
+                    <div className="flex gap-1.5 mb-4">
+                      <div className="w-3 h-3 rounded-full bg-custom-red border-2 border-black"></div>
+                      <div className="w-3 h-3 rounded-full bg-custom-yellow border-2 border-black"></div>
+                      <div className="w-3 h-3 rounded-full bg-custom-green border-2 border-black"></div>
+                    </div>
+
+                    <p className="font-sans text-base md:text-lg font-bold leading-relaxed text-gray-900">
+                      {exp.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
           ))}
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 
